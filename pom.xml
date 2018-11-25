@@ -10,4 +10,37 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <build>
+        <plugins>
+            
+            <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <id>wsimport-from-jdk</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <target>2.1</target>
+                            <verbose>true</verbose>
+                            <executable>${tool.wsimport}</executable>
+                            <!--<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>-->
+                            <wsdlUrls>
+                                <wsdlUrl>http://localhost:8080/horus/ws/rpc?wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <bindingFiles>
+                                <bindingFile>${basedir}/src/main/resources/bindings/binding.xml</bindingFile>
+                            </bindingFiles>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

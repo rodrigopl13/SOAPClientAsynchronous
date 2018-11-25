@@ -1,0 +1,5 @@
+<bindings
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns="http://java.sun.com/xml/ns/jaxws">
+    <enableAsyncMapping>true</enableAsyncMapping>
+</bindings>
