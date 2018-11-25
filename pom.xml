@@ -29,7 +29,7 @@
                             <executable>${tool.wsimport}</executable>
                             <!--<wsdlDirectory>${basedir}/src/main/resources/wsdl</wsdlDirectory>-->
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8080/horus/ws/rpc?wsdl</wsdlUrl>
+                                <wsdlUrl>http://localhost:8080/horus/ws/async?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <bindingFiles>
                                 <bindingFile>${basedir}/src/main/resources/bindings/binding.xml</bindingFile>
